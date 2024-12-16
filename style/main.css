@@ -64,6 +64,10 @@ a {
     background-color: white;
 }
 
+.link__hover-effect--green:after {
+    background-color: #18ce36;
+}
+
 .link__hover-effect:hover:after {
     width: 100%;
     left: 0%;
@@ -89,6 +93,10 @@ img {
     margin: 0 auto;
 }
 
+.click {
+    cursor: pointer;
+}
+
 .text--green {
     color: #18ce36;
 }
@@ -96,7 +104,7 @@ img {
 .section__title {
     margin-bottom: 16px;
     font-weight: 500;
- }
+}
 
 .description__header {
     font-size: 48px;
@@ -191,6 +199,73 @@ nav {
 
 .nav__link--primary:hover {
     background-color: #106e20;
+}
+
+.btn__menu {
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #18ce36;
+    display: none;
+}
+
+.menu__backdrop {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    transition: all 300ms ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.menu--open .menu__backdrop {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu--open {
+    max-width: 100vh;
+    overflow-y: hidden;
+}
+
+.menu__list {
+    padding: 32px 0;
+}
+
+.menu__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__link {
+    color: #242424;
+    font-size: 24px;
+}
+
+.menu__link:hover {
+    color: #18ce36;
+}
+
+.white {
+    color: white;
+}
+
+.btn__menu--close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 8;
+    color: white;
 }
 
 
@@ -574,11 +649,12 @@ PRICING PLANS
 
 .plans {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 48px;
 }
 
 .plan {
-   width: calc(100%/3);
+   width: 30%;
    display: flex;
    flex-direction: column; 
    align-items: center;
@@ -911,6 +987,176 @@ CONTACT FORM
 .message__info {
     display: flex;
     flex-direction: column;
+}
+
+/*
+
+RESPONSIVE
+
+*/
+
+/* SMALL PHONES. TABLETS, LARGE SMARTPHONES */
+@media (max-width: 682px) {
+    .search_box {
+        visibility: hidden;
+    }
+
+    .header__description--wrapper {
+        text-align: center;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    .features__intro {
+        text-align: center;
+    }
+
+    .services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service__para {
+        display: none;
+    }
+
+    .service__description {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+
+    .work__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .work__description--wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    .work__img--wrapper {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .steps__container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .section__title, .description__header {
+        text-align: center;
+    }
+
+    .values__container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 36px;
+    }
+
+    .values__description--wrapper {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .plan {
+        min-width: 343px;
+    }
+
+    .testimonials__container {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .testimonials__description {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .testimonials__img--wrapper {
+        margin-top: 24px;
+    }
+
+    .footer__para {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header__container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .header__description--wrapper {
+        margin: 0;
+    }
+
+    .work__container, .steps__container, .values__container, .pricing__container, .testimonials__container {
+        padding: 0 24px;
+    }
+
+    
+}
+
+@media (max-width: 883px) {
+    .nav__link--list {
+        display: none;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+
+    .plans {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        width: 50%;
+        margin-bottom: 24px;
+    }
+
+    .header__container,    
+    .work__container,
+    .steps__container,
+    .values__container,
+    .pricing__container,
+    .testimonials__container {
+        padding: 0 24px;
+    }
 }
 
 
